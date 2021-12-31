@@ -9,9 +9,10 @@
     "lint": "next lint",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "deploy-gh-pages": "rm -rf node_modules/.cache && storybook-to-ghpages && next build && next export && touch out/.nojekyll && git add -f out/ && git checkout -b temp-for-deploy-gh-pages && git commit -m \"Deploy Next.js to gh-pages\" && git subtree split --prefix out -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages && git checkout main && git branch -D temp-for-deploy-gh-pages",
+    "deploy-gh-pages": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add -f out/ && git checkout -b temp-for-deploy-gh-pages && git commit -m \"Deploy Next.js to gh-pages\" && git subtree split --prefix out -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages && git checkout main && git branch -D temp-for-deploy-gh-pages",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "chromatic"
   },
   "dependencies": {
     "next": "12.0.7",
@@ -24,8 +25,8 @@
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
     "@storybook/react": "^6.4.9",
-    "@storybook/storybook-deployer": "^2.8.10",
     "babel-loader": "^8.2.3",
+    "chromatic": "^6.3.3",
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
     "gh-pages": "^3.2.3"
