@@ -31,3 +31,5 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# npx chromatic --project-token=a7b3ea86811b;
